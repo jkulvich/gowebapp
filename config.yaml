@@ -1,0 +1,13 @@
+logger:
+  level: debug
+  caller: false
+  formatter: text
+
+server:
+  addr: 'localhost:9966'
+  root: './assets/web'
+  assets: './assets'
+
+app:
+  engine: 'chromium'
+  addr: 'localhost:9966'

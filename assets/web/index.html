@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/css/uikit.min.css"/>
+    <script src="lib/js/uikit.min.js"></script>
+    <script src="lib/js/uikit-icons.min.js"></script>
+    <script src="app.js"></script>
+    <title>Data Storage APP</title>
+</head>
+<body>
+<script>
+    window.resizeTo(1000, 600)
+</script>
+
+<!-- Table -->
+<div class="uk-card uk-card-default uk-card-body uk-margin-xlarge-top uk-animation-fade">
+    <table class="uk-table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tbody id="items-container">
+        <!-- Items here -->
+        <tr id="item-new">
+            <th>
+                <button id="btn-new" class="uk-button uk-button-primary" uk-tooltip="title: New; pos: bottom">
+                    <span uk-icon="icon: plus"></span>
+                </button>
+            </th>
+            <th>
+                <input id="input-key" class="uk-input" type="text" uk-tooltip="title: New key; pos: bottom">
+            </th>
+            <th>
+                <input id="input-value" class="uk-input" type="text" uk-tooltip="title: New value; pos: bottom">
+            </th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Item template -->
+<template id="item-template">
+    <tr class="item uk-animation-slide-bottom-small">
+        <th>
+            <button id="btn-remove" class="uk-button uk-button-default" uk-tooltip="title: Remove; pos: bottom">
+                <span uk-icon="icon: trash"></span>
+            </button>
+        </th>
+        <th>
+            <input id="input-key" class="uk-input" type="text" value="key" uk-tooltip="title: Key; pos: bottom">
+        </th>
+        <th>
+            <input id="input-value" class="uk-input" type="text" value="value" uk-tooltip="title: Value; pos: bottom">
+        </th>
+    </tr>
+</template>
+
+<!-- Toolbar -->
+<div id="toolbar" class="uk-card uk-card-default uk-card-body uk-animation-slide-top" style="position: fixed; top: 0; left: 0; width: 100%;">
+    <div uk-grid>
+        <div>
+            <h3 class="uk-card-title" uk-tooltip="title: By @jkulvich; pos: bottom">
+                Data Storage
+            </h3>
+        </div>
+        <div class="uk-width-expand"></div>
+        <div>
+            <button id="btn-load" class="uk-button uk-button-default" uk-tooltip="title: Load; pos: bottom">
+                <span uk-icon="icon: sign-out"></span>
+            </button>
+        </div>
+        <div>
+            <button id="btn-store" class="uk-button uk-button-primary" uk-tooltip="title: Store; pos: bottom">
+                <span uk-icon="icon: sign-in"></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
